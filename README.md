@@ -1,2 +1,2 @@
-"# This is my GitHub page" 
-"By Nanthanat" 
+## This is my GitHub page
+## By Nanthanat
