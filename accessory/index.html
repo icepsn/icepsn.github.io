@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Quotation Car Accessory</title>
+    <title>Car Accessory Store</title>
     <meta name="description" content="Company quotation">
     <meta name="author" content="SitePoint">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <style>
         body { font-family: Arial, sans-serif; margin-top: 20px; }
-        .container { border: 1px solid #ddd; padding: 20px; border-radius: 10px; background-color: #f9f9f9; }
-        .quotation-header { border-bottom: 2px solid #333; margin-bottom: 20px; }
+        .container { border: 1px solid #ddd; padding: 20px; border-radius: 10px; background-color: #e7f4ff; }
+        .quotation-header { border-bottom: 2px solid #09043d; margin-bottom: 20px; }
         .quotation-header h1 { font-size: 40px; margin: 0; }
-        .quotation-table thead { background-color: #333; color: #fff; }
+        .quotation-table thead { background-color: #0b1138; color: #fff; }
         .quotation-table tfoot { font-weight: bold; }
         footer { text-align: center; margin-top: 20px; font-size: 14px; }
     </style>
@@ -50,7 +50,7 @@
             <thead>
                 <tr>
             
-                    <th>Description</th>
+                    <th>Accessory</th>
                     <th>Quantity</th>
                     <th>Unit Price</th>
                     <th>Amount</th>
@@ -92,12 +92,13 @@
                 <div class="modal-body">
                     <table class="table">
                         <tr>
-                            <td>Description</td>
+                            <td>Accessory</td>
                             <td>
                                 <select id="newItemDescription" class="form-control">
-                                    <option value="Car Cover" data-price="80">Car Cover - $80</option>
-                                    <option value="Seat Covers" data-price="50">Seat Covers - $50</option>
-                                    <option value="Phone Holder" data-price="20">Phone Holder - $20</option>
+                                    <option value="Car Cover" data-price="250">Car Cover - 250</option>
+                                    <option value="Seat Covers" data-price="90">Seat Covers - 90</option>
+                                    <option value="Floor Mats" data-price="150">Floor Mats - 150</option>
+                                    <option value="Door Visors" data-price="200">Door Visors - 200</option>
                                 </select>
                             </td>
                         </tr>
@@ -127,7 +128,7 @@
             var quantity = parseFloat($("#newItemQty").val());
 
             if (quantity > 0) {
-                quotationData.push({ description, quantity, unitPrice: price });
+                quotationData.push({ acessory, quantity, unitPrice: price });
                 $('#exampleModal').modal('hide');
                 renderTable();
             }
@@ -144,8 +145,8 @@
 
             var rows = quotationData.map((item, index) => `
                 <tr class="data-row">
-                    <td class="text-center">${item.quantity}</td>
                     <td>${item.description} <button class="btn btn-danger btn-xs" onclick="deleteItem(${index})">X</button></td>
+                    <td class="text-center">${item.quantity}</td>
                     <td class="text-right">${item.unitPrice.toFixed(2)}</td>
                     <td class="text-right">${(item.unitPrice * item.quantity).toFixed(2)}</td>
                 </tr>
