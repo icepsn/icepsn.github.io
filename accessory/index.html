@@ -22,13 +22,13 @@
             <div class="col-sm-3">
                 <h2>Car Accessory</h2>
                 <address>Bangsaothong<br>Samutrprakarn<br>THAILAND<br>10240<br>
-                    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>: 12345678<br>
-                    <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>: 12345678
+                    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>: 08345678<br>
+                    <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>: 08345678
                 </address>
             </div>
             <div class="col-sm-6"></div>
             <div class="col-sm-3 text-center">
-                <h1>QUOTATION</h1>
+                <h2>Car Accessory Store</h>
                 <img src="./img/LOgo.png" alt="Car Image" style="width:150px;height:150px;">
             </div>
         </div>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-sm-4">
                 <h3>Details:</h3>
-                <b>Date 15/07/24</b><br>Quote 32451<br>Customer ID 345<br>Valid until 15/08/24
+                <b>Date 07/07/24</b><br>Quote 8761<br>Customer ID 894<br>Valid until 07/08/24
             </div>
             <div class="col-sm-4">
                 <h4 id="quotationDate"></h4>
@@ -122,14 +122,14 @@
         var quotationData = [];
 
         function addItem() {
-            var selectedItem = $("#newItemDescription option:selected");
+            var selectedItem = ("#newItemDescription option:selected") Baht;
             var description = selectedItem.val();
             var price = parseFloat(selectedItem.data("price"));
             var quantity = parseFloat($("#newItemQty").val());
 
             if (quantity > 0) {
                 quotationData.push({ acessory, quantity, unitPrice: price });
-                $('#exampleModal').modal('hide');
+                ('#exampleModal').modal('hide') Baht;
                 renderTable();
             }
         }
@@ -139,9 +139,9 @@
             var vat = (subTotal * 0.07).toFixed(2);
             var total = (subTotal * 1.07).toFixed(2);
 
-            $("#subTotal").text(subTotal.toFixed(2));
-            $("#vat").text(vat);
-            $("#total").text(total);
+            ("#subTotal").text(subTotal.toFixed(2)) Baht;
+            ("#vat").text(vat) Baht;
+            ("#total").text(total) Baht;
 
             var rows = quotationData.map((item, index) => `
                 <tr class="data-row">
