@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Accessories</title> 
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    <h1>Car Accessories</h1>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#accessoryModal">
+        Add Accessory
+    </button>
+
+
+    <div class="modal" id="accessoryModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Accessory</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <form id="accessoryForm">
+                        <label for="accessory">Select an accessory:</label>
+                        <select id="accessory" name="accessory">
+                            <option value="250">Car Cover</option>
+                            <option value="90">Seat Covers</option>
+                            <option value="150">Floor Mats</option>
+                            <option value="200">Door Visors</option>
+                        </select>
+                        <br>
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" min="1" value="1">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="addToProductList()">Add</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Product List</h2>
+    <table id="productList" class="table">
+        <thead>
+            <tr>
+                <th>Accessory</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+    <h3>Total Price: <span id="totalPrice">0</span> Baht</h3> 
+    <h3>VAT 7%: <span id="vatAmount">0</span> Baht</h3>
+    <h2>Net Price: <span id="netPrice">0</span> Baht</h2>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+
+        
+
+        function deleteRow(btn) {
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            calculateTotal();
+        }
+        
+ 
+    </script>
+</body>
+</html>
